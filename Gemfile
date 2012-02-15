@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 #gem 'rails', '3.1.3'#working b4 changing to 3.2
 gem 'rails', '3.2.1'
 
-gem 'pg'
+gem 'mysql'
 
 
 # Gems used only for assets and not required
@@ -21,7 +21,7 @@ end
 
 
 gem "devise"#, "1.4.9"
-gem 'mysql', '2.8.1'
+# gem 'mysql', '2.8.1'
 gem 'activeadmin', :git => "git://github.com/gregbell/active_admin.git"# , '0.3.4'
 #gem 'sass-rails' , '3.1.5'#working b4 changing to 3.2
 gem "faraday", "~> 0.7.5"
@@ -52,7 +52,8 @@ gem "friendly_id", "~> 4.0.0.beta14"
 
 # Production tools
 group :production do
-  gem "newrelic_rpm"
+  gem 'execjs'
+  gem 'therubyracer'
 end
 
 # SEO gems
