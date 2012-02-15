@@ -1,0 +1,52 @@
+<%- content_for :page_breadcrumbs, link_to("Home" , "/map")-%>
+<%- content_for :page_title_bar, "Browse by Process" -%>
+<!-- ***************** - START Content - ***************** -->
+<div id="content" class="content_full_width">
+<%- if !current_user-%>
+<div class="one_half home_login_form">
+
+</div><!-- end one_half -->
+<%-end-%>
+
+
+
+
+<div class="one_half_last home_content_updates">
+  
+                 <!-- ***************** - START Accordions (set 1) - ***************** -->
+                 <ul class="accordion">
+                   <%@phases.map{|u| u if u.program_level == false}.compact.each do |x|%>
+                 <li><a href="#" class="opener"><strong><%=x.name%></strong></a>
+                     <div class="slide-holder">
+                         <div class="slide">
+                           <%unless x.stages.blank?%>
+                            <ul class="list">
+                              <%x.stages.order("name asc").each do |s|%>
+                                <li><%=s.name%>
+                                  <%unless s.activities.blank?%>
+                                  <ul class="list">
+                                    <%s.activities.order("name asc").each do |a|%>
+                                      <li><%=link_to a.name , "/activity/#{a.id}"%></li>
+                                    <%end%>
+                                  </ul>
+                                  <%end%>  
+                                </li>
+                              <%end%>
+                            </ul>
+                            <%end%>
+                         </div><!-- end slide-holder -->
+                     </div><!-- end slide -->
+                 </li>
+                  <%end%>
+
+                 </ul><!-- end accordion -->
+                 <!-- ***************** - END Accordions (set 1) - ***************** -->
+
+</div><!-- end one_half_last -->
+
+
+
+
+</div><!-- end content -->
+
+

@@ -1,0 +1,63 @@
+<%- content_for :page_breadcrumbs, link_to("Home" , "/map")-%>
+<!-- ***************** - START Content - ***************** -->
+<div id="content" class="content_full_width">
+<%- if !current_user-%>
+<div class="one_half home_login_form">
+<!-- ***************** - START Contact Form - ***************** -->
+<h2>Login Form</h2>
+<div class="one_half home_login_form">
+<%unless flash[:alert].blank?%><p class="message_red"><%=flash[:alert]%></p><%end%>
+</div>
+    <div class="iphorm-outer">
+    <%= form_for(:user, :as => :user, :url => session_path(:user), :html => { :class => "iphorm" }) do |f| %>
+		    <div class="iphorm-wrapper">
+	        <div class="iphorm-inner">
+                   <div class="iphorm-message"></div>
+	               <div class="iphorm-container clearfix">
+	                    <!-- Begin Name element -->
+                        <div class="element-wrapper name-element-wrapper clearfix">
+                            <label for="name">Email <span class="required">(required)</span></label>
+                            <div class="input-wrapper name-input-wrapper">
+                                <input class="name-element" id="user_email" type="email" name="user[email]" />
+                            </div>
+                        </div>
+                        <!-- End Name element -->
+                        <!-- Begin Email element -->
+                        <div class="element-wrapper email-element-wrapper clearfix">
+                            <label for="email">Password <span class="required">(required)</span></label>
+                            <div class="input-wrapper email-input-wrapper">
+                                <input class="email-element" id="user_password" type="password" name="user[password]" />
+                            </div>
+                            <%= link_to "Forgot your password?", new_password_path(:user) %>
+                        </div>
+                        <!-- End Email element -->
+                        <!-- Begin Submit button -->
+                        <div class="button-wrapper submit-button-wrapper clearfix">
+                            <!--div class="loading-wrapper"><span class="loading">Please wait...</span></div-->
+                            <div class="button-input-wrapper submit-button-input-wrapper">
+                                <input class="ka-form-submit" type="submit" name="contact" value="Submit" />
+                            </div>
+                        </div>
+                        <!-- End Submit button -->
+	               </div>
+	           </div>
+		   </div>
+    <%-end-%>
+	</div>
+	<!-- ***************** - END Contact Form - ***************** -->
+</div><!-- end one_half -->
+<%-end-%>
+
+
+
+
+<div class="one_half_last home_content_updates">
+  <%= render :partial => "/shared/activity_updates" %>
+</div><!-- end one_half_last -->
+
+
+
+
+</div><!-- end content -->
+
+

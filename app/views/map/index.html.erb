@@ -1,0 +1,46 @@
+<%- content_for :page_title_bar, "InfoReady Delivery Methodology" -%>
+<%- content_for :page_breadcrumbs, link_to("Home" , "/map")-%>
+<script>
+/*
+$(document).ready(function(){
+$(".hover_change_title").hide();  
+$(".map_buttons a").mouseenter(
+  function () {
+    var title = $(this).attr("title");
+    $(".hover_change_title p.message_blue").text(title);
+    $(".hover_change_title").show();
+  }
+).mouseleave(function(){$(".hover_change_title").hide();});
+});
+*/
+</script>
+
+<!-- ***************** - START Content - ***************** -->
+<div id="content" class="content_full_width">
+
+<div class="home_content_updates map_buttons">
+<%counter = 1%>
+    <% @phase.map{|u| u if u.program_level == false}.compact.each do |x| %>
+      <%#=link_to x.name , "/map/stage/#{x.id}"%>
+      
+      <a title="<%=x.name%>" href="/map/stage/<%=x.id%>"><button class="skip <%=(counter == @phase.map{|u| u if u.program_level == false}.compact.size)? "no_mr"  : "" %>"><%=x.name%></button></a>
+      <%counter+=1%>
+    <%end%>
+    
+    <% @phase.map{|u| u if u.program_level == true}.compact.each do |x| %>
+      <%#=link_to x.name , "/map/stage/#{x.id}"%>
+      <a title="<%=x.name%>" href="/map/stage/<%=x.id%>"><button class="clean-gray"><%=x.name%></button></a>
+    <%end%>
+
+<a title="Browse by Process" href="/home/text_option"><button class="blue-pill">Browse by Process</button></a>
+<a title="Browse by Deliverable" href="/home/deliverable_option"><button class="blue-pill">Browse by Deliverable</button></a>
+</div><!-- end one_half_last -->
+
+<!--div class="one_half hover_change_title">
+<p class="message_blue">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lacinia facilisis nibh, ut imperdiet massa sagittis id. In hac habitasse platea dictumst. Sample link</p>
+</div-->
+
+
+</div><!-- end content -->
+
+

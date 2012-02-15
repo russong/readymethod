@@ -1,0 +1,13 @@
+<%- content_for :page_title_bar, "InfoReady Delivery Methodology" -%>
+<%#- content_for :page_title_bar,link_to(@activity.first.stage.phase.name , "/map")+" --> "+ link_to(@activity.first.stage.name , "/map/stage/#{@activity.first.stage.phase_id}") unless @activity.blank? -%>
+<%- content_for :page_breadcrumbs, link_to("Home","/map")+link_to(@activity.first.stage.phase.name , "/map")+ link_to(truncate(@activity.first.stage.name, :length => 30) , "/map/stage/#{@activity.first.stage.phase_id}") unless @activity.blank? -%>
+
+<div id="content" class="content_full_width">
+<div class="home_content_updates map_buttons">
+    <% @activity.each do |x| %>
+      <a title="<%=x.name%>" href="/activity/<%=x.id%>"><button class="cupid-blue"><%=x.name%></button></a><br/>
+    <%end%>
+</div><!-- end one_half_last -->
+</div><!-- end content -->
+
+

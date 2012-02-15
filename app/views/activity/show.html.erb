@@ -1,0 +1,115 @@
+<%- content_for :page_title_bar, "Activity" -%>
+<%- content_for :page_breadcrumbs,link_to("Home","/map")+link_to(@activity.stage.phase.name , "/map")+ link_to(truncate(@activity.stage.name, :length => 30) , "/map/stage/#{@activity.stage.phase_id}") +  link_to(truncate(@activity.name, :length => 40) , "/map/activity/#{@activity.stage_id}") unless @activity.blank? -%>
+  <script>
+  $(document).ready(function(){
+    $('#blog_form').submit(function() {
+      if ($("#blog_content").val() == ""){
+      $("#blog_form_error").show();
+      return false;
+    }
+      });
+      
+      $('#tip_form').submit(function() {
+        if ($("#tip_content").val() == ""){
+        $("#tip_form_error").show();
+        return false;
+      }
+        });
+      
+    });
+    
+    
+
+  
+  </script>
+
+<!-- ***************** - START Content - ***************** -->
+<div id="content" class="content_full_width">
+<%unless flash[:notice].blank?%><p class="message_green"><%=flash[:notice]%></p><%end%>
+  <p class="message_red" style="display:none;" id="blog_form_error">Content can't be blank</p>
+<div class="one_half home_login_form">
+<!-- ***************** - START Contact Form - ***************** -->
+<h2>Comments</h2>
+<div class="one_half home_login_form">
+  <%unless @blogs.blank?%>
+  <ul class="list">
+  <%@blogs.each do|x|%>
+  <li><%=x.content%> <span class="author_blog">- <%=x.user.email%> - <%=x.created_at.strftime("%d/%m/%Y")%></span></li>
+  <%end%>
+  </ul>
+  <%end%>
+
+</div>
+    <div class="iphorm-outer">
+    <%= form_for("blogs", :url => "/blogs", :html => { :class => "iphorm" ,:id => "blog_form" }) do |f| %>
+		    <div class="iphorm-wrapper">
+	        <div class="iphorm-inner">
+                   <div class="iphorm-message"></div>
+	               <div class="iphorm-container clearfix">
+	                    <!-- Begin Name element -->
+                        <div class="element-wrapper name-element-wrapper clearfix">
+                            <label for="name">Comment <span class="required">(required)</span></label>
+                            <div class="input-wrapper name-input-wrapper">
+                              <input class="name-element" id="blog_user_id" type="hidden" name="blog[user_id]" value="<%=current_user.id unless current_user.blank?%>" />
+                                <input class="name-element" id="blog_activity_id" type="hidden" name="blog[activity_id]" value="<%=@activity.id unless @activity.blank?%>"/>
+                                <input class="name-element" id="blog_content" type="text" name="blog[content]" />
+                            </div>
+                        </div>
+                        <!-- End Name element -->
+                        <!-- Begin Submit button -->
+                        <div class="button-wrapper submit-button-wrapper clearfix">
+                            <!--div class="loading-wrapper"><span class="loading">Please wait...</span></div-->
+                            <div class="button-input-wrapper submit-button-input-wrapper">
+                                <input class="ka-form-submit" type="submit" name="contact" value="Submit" />
+                            </div>
+                        </div>
+                        <!-- End Submit button -->
+	               </div>
+	           </div>
+		   </div>
+    <%-end-%>
+	</div>
+	<!-- ***************** - END Contact Form - ***************** -->
+	
+	
+	
+	<!-- ***************** - START Contact Form - ***************** -->
+      <%unless @tips.blank?%>
+  <h2>Tips</h2>
+  <div class="one_half home_login_form">
+
+    <ul class="list">
+    <%@tips.each do|x|%>
+    <li><%=x.content%></li>
+    <%end%>
+    </ul>
+    
+  </div>
+  <%end%>
+  	<!-- ***************** - END Contact Form - ***************** -->
+	
+</div><!-- end one_half -->
+
+
+
+
+
+<div class="one_half_last home_content_updates">
+  <h5><%=@activity.name%></h5>
+  <%=raw(@activity.content) unless @activity.content.blank?%>
+  
+  <%unless @activity.deliverables.blank?%>
+  <ul class="list">
+  <%@activity.deliverables.each do |x|%>
+    <li><%=x.deliverable_name%> <%="[" + x.file_file_name + "] - "%> <%= link_to "Download",x.file.url%> </li>
+  <%end%>
+  </ul>
+  <%end%>
+</div><!-- end one_half_last -->
+
+
+
+
+</div><!-- end content -->
+
+

@@ -1,0 +1,234 @@
+/*** Pricing Table ***/
+
+div.price_table {
+	float:left;
+	-moz-border-radius:5px 5px 5px 5px;
+	-webkit-border-radius:5px 5px 5px 5px;
+	border: 1px solid #dedede;
+	margin-bottom: 21px;
+	width:940px; /* Changing this value will widen the table, you may also need to adjust the .price_table .column width*/
+	background: #f1f4f8; /* This is to fix the left and right borders if the box is too wide */
+	margin-top:21px;
+	font-size: 13px;
+	
+}
+.price_table div {
+	float: left; 
+	width: 100%;
+}
+.price_table .border {
+	-moz-border-radius:4px 4px 4px 4px;
+	-webkit-border-radius:4px 4px 4px 4px;
+	border-top:1px solid #FFFFFF;
+}
+.price_table .column {
+	float:left;
+	width:19%; /* 19% will work for 5 boxes, down to the .price_table width of 960px. You may need to adjust this if you adjust the .price_table Width */
+	margin-left: 1px;
+}
+.price_table .column.secondary {
+	background: #f1f4f8;
+}
+.price_table .column.primary {
+	background: #f9fbfc;
+}
+.price_table .column.featured {
+	-moz-border-radius:3px 3px 3px 3px;
+	-moz-box-shadow:0 4px 6px rgba(0, 0, 0, 0.25);
+	-webkit-border-radius:3px 3px 3px 3px;
+	-webkit-shadow:0 4px 6px rgba(0, 0, 0, 0.25);
+	background:none repeat scroll 0 0 white;
+	border:5px solid #666;
+	margin-bottom:-17px;
+	margin-top:-23px;
+	padding:15px;
+	z-index: 5;
+	position: relative;
+}
+.price_table .best_deal {
+	background:url("../images/_pricing_tables/best_deal.png") no-repeat scroll 0 0 transparent;
+	display:inline;
+	float:right;
+	height:72px;
+	margin-bottom:-56px;
+	margin-right:-18px;
+	margin-top:-18px;
+	width:72px;
+	position: relative;
+}
+.price_table .header {
+	border-bottom:1px solid #e3e3e3;
+	font-size:27px;
+	font-style:normal;
+	letter-spacing:-1px;
+	padding-bottom:22px;
+	text-align:center;
+	margin-bottom:0;
+	font-weight: bold;
+	color:#666;
+	margin-top:15px;
+}
+.price_table .header span{
+	width: 100%;
+	clear: both;
+	float: left;
+	font-size: 18px;
+	line-height:15px;
+	color: #616161;
+}
+
+.price_table .footer {
+	height: 50px;
+	border-top: 1px solid white;
+	padding:5px 0 20px 3px;
+	text-align: center;
+	
+}	
+.price_table .included {
+
+}
+.price_table .column ul {
+list-style:none;
+padding-left:12px;
+}
+.price_table .column li {
+	background:url("../images/_pricing_tables/checkmark.png") no-repeat scroll 14px 6px transparent;
+	border-bottom:1px solid #e3e3e3;
+	border-top:1px solid white;
+	line-height:24px;
+	padding-left:39px;
+}
+
+
+.price_table .small_button {
+    font-size: 0.8em;
+}
+
+
+/*** End Pricing Table ***/
+
+
+
+
+/* *********************************************************************************** */
+/* PRICING COLOR SCHEMES
+/* *********************************************************************************** */
+
+
+/* ---------------------- 
+TealGrey
+------------------------- */
+.tealgrey_table .header {color:#4E6B75 !important;}
+.tealgrey_table .featured {border:5px solid #4E6B75 !important;}
+.tealgrey_table .secondary, .tealgrey_table {background: #E1E8EB !important;}
+
+
+
+/* ---------------------- 
+Teal
+------------------------- */
+.teal_table .header {color:#4A9590 !important;}
+.teal_table .featured {border:5px solid #4A9590 !important;}
+.teal_table .secondary, .teal_table {background: #ECF4F3 !important;}
+
+
+/* ---------------------- 
+Royal Blue
+------------------------- */
+.royalblue_table .header {color:#445E83 !important;}
+.royalblue_table .featured {border:5px solid #445E83 !important;}
+.royalblue_table .secondary, .royalblue_table {background: #ECEEF2 !important;}
+
+
+/* ---------------------- 
+Cool Blue
+------------------------- */
+.coolblue_table .header {color:#127AAF !important;}
+.coolblue_table .featured {border:5px solid #127AAF !important;}
+.coolblue_table .secondary, .coolblue_table {background: #E7F1F7 !important;}
+
+
+/* ---------------------- 
+Sky Blue
+------------------------- */
+.skyblue_table .header {color:#0DB5D2 !important;}
+.skyblue_table .featured {border:5px solid #0DB5D2 !important;}
+.skyblue_table .secondary, .skyblue_table {background: #E6F7FA !important;}
+
+
+/* ---------------------- 
+Lime Green
+------------------------- */
+.limegreen_table .header {color:#92A815 !important;}
+.limegreen_table .featured {border:5px solid #92A815 !important;}
+.limegreen_table .secondary, .limegreen_table {background: #F4F6E7 !important;}
+
+
+/* ---------------------- 
+Forest Green
+------------------------- */
+.forestgreen_table .header {color:#738646 !important;}
+.forestgreen_table .featured {border:5px solid #738646 !important;}
+.forestgreen_table .secondary, .forestgreen_table {background: #F1F2EC !important;}
+
+
+/* ---------------------- 
+Golden
+------------------------- */
+.golden_table .header {color:#B9982F !important;}
+.golden_table .featured {border:5px solid #B9982F !important;}
+.golden_table .secondary, .golden_table {background: #F8F4EA !important;}
+
+
+/* ---------------------- 
+Autumn
+------------------------- */
+.autumn_table .header {color:#994717 !important;}
+.autumn_table .featured {border:5px solid #994717 !important;}
+.autumn_table .secondary, .autumn_table {background: #F4ECE7 !important;}
+
+
+/* ---------------------- 
+Fire
+------------------------- */
+.fire_table .header {color:#F37E38 !important;}
+.fire_table .featured {border:5px solid #F37E38 !important;}
+.fire_table .secondary, .fire_table {background: #FDF2EB !important;}
+
+
+
+/* ---------------------- 
+Cherry
+------------------------- */
+.cherry_table .header {color:#C5250B !important;}
+.cherry_table .featured {border:5px solid #C5250B !important;}
+.cherry_table .secondary, .cherry_table {background: #F9E9E6 !important;}
+
+
+
+/* ---------------------- 
+Purple
+------------------------- */
+.purple_table .header {color:#874664 !important;}
+.purple_table .featured {border:5px solid #874664 !important;}
+.purple_table .secondary, .purple_table {background: #F3ECEF !important;}
+
+
+
+/* ---------------------- 
+Pink
+------------------------- */
+.pink_table .header {color:#B6548F !important;}
+.pink_table .featured {border:5px solid #B6548F !important;}
+.pink_table .secondary, .pink_table {background: #F7EDF3 !important;}
+
+
+
+/* ---------------------- 
+Violet
+------------------------- */
+.violet_table .header {color:#8438D8 !important;}
+.violet_table .featured {border:5px solid #8438D8 !important;}
+.violet_table .secondary, .violet_table {background: #F2EBFB !important;}
+
+

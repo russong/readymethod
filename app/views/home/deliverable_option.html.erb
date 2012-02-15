@@ -1,0 +1,32 @@
+<%- content_for :page_breadcrumbs, link_to("Home" , "/map")-%>
+<%- content_for :page_title_bar, "Browse by Deliverable" -%>
+<!-- ***************** - START Content - ***************** -->
+<div id="content" class="content_full_width">
+<%- if !current_user-%>
+<div class="one_half home_login_form">
+
+</div><!-- end one_half -->
+<%-end-%>
+
+
+
+
+<div class="one_half_last home_content_updates">
+  <h2>Browse by Deliverable</h2>
+  <br />
+  <!--p>Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p-->
+    <%unless @deliverables.blank?%>
+    <ul class="list">
+        <% @deliverables.each do |x| %>
+          <li><%=x.deliverable_name%> <%="[" + x.file_file_name + "] - "%> <%=link_to "View Activity" , "/activity/#{x.activity_id}"%> | <%= link_to "Download",x.file.url%></li>
+        <%end%>
+    </ul>
+    <%end%>
+</div><!-- end one_half_last -->
+
+
+
+
+</div><!-- end content -->
+
+

@@ -1,0 +1,361 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<!--[if lte IE 8]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /><![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>InfoReady</title>
+<script type="text/javascript" src="/javascripts/jquery-1.4.2.min.js"></script>
+<!--script type="text/javascript" src="/javascripts/jquery.nestedAccordion.js"></script-->
+
+<%#= javascript_include_tag "application"%>
+<script type="text/javascript" src="/javascripts/karma.js"></script>
+
+<!--script type="text/javascript" src="/contact-form/js/iphorm.js"></script-->
+<!--script type="text/javascript" src="/contact-form/js/plugins.js"></script-->
+<!--script type="text/javascript" src="/contact-form/js/scripts.js"></script-->
+<link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/karma-royal-blue.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="#"/>
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/lt8.css" media="screen"/><![endif]-->
+<link href="/contact-form/css/standard.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div class="top-block">
+<div class="top-holder">
+
+
+
+<!-- ***************** - Top Toolbar Left Side - ***************** -->
+ <div class="sub-nav">
+ <ul>
+ <li><a href="/">Home</a></li>
+ <!--li><a href="template-sitemap.html">Sitemap</a></li>
+ <li><a href="template-contact-iphone.html">Contact</a></li>
+ <li><a href="#">Purchase</a></li-->
+ </ul></div><!-- end sub-nav -->
+ <!-- ***************** - END Top Toolbar Left Side - ***************** -->
+ 
+
+
+<!-- ***************** - Top Toolbar Right Side - ***************** -->
+<div class="sub-nav2">
+    <ul>
+    <%- if !current_user-%>
+    <li><a href="/signin">Login</a></li>
+    <li><a href="/users/sign_up">Signup</a></li>
+    <%-else-%>
+    <li>Welcome <%= (current_user)? current_user.email : "Guest"  %>!</li>
+    <li><a href="/signout">Logout</a></li>
+    <%-end-%>
+    </ul>
+</div><!-- end sub-nav2 -->
+<!-- ***************** - END Top Toolbar Right Side - ***************** -->
+
+
+
+</div><!-- end top-holder -->
+</div><!-- end top-block -->
+
+
+
+
+<div class="header-holder">
+<div class="rays">
+<div class="header-area">
+
+
+<!-- ***************** - LOGO - ***************** -->
+<a href="/" class="logo"><img src="/images/InfoReadyWhiteSmall.png" alt="InfoReady Logo" /></a>
+<!-- ***************** - END LOGO - ***************** -->
+
+
+
+
+<!-- ***************** - Main Navigation - ***************** -->
+<ul id="menu-main-nav">
+  
+  <li><a href="/map"><span><strong>Delivery Methodology</strong><span class="navi-description">Home</span></span></a></li>
+  
+  
+  
+  
+<!--li><a href="content-3d-effects.html"><span><strong>Features</strong><span class="navi-description">about this theme</span></span></a>
+<ul class="sub-menu">
+	<li><a href="content-3d-effects.html"><span>Amazing 3D Effects</span></a></li>
+	<li><a href="content-code-snippets.html"><span>100+ Code Snippets</span></a></li>
+    <li><a href="content-pricing-tables.html"><span>Pricing Tables</span></a></li>
+	<li><a href="content-20-page-layouts.html"><span>20 Page Layouts</span></a></li>
+	<li><a href="content-20-color-variations.html"><span>20 Color Variations</span></a></li>
+	<li><a href="content-ajax-contact-form.html"><span>AJAX + PHP Contact Form</span></a></li>
+	<li><a href="content-top-notch-support.html"><span>Top Notch Customer Support</span></a></li>
+	</ul>
+</li>
+
+<li class="current_page_item"><a href="index-jquery-2.html"><span><strong>Pages</strong><span class="navi-description">layout templates</span></span></a>
+<ul class="sub-menu">
+ <li><a href="index-jquery-2.html"><span>Homepage &#8211; jQuery 2</span></a></li>
+ <li><a href="index-video-left.html"><span>Homepage &#8211; Video Left</span></a></li>
+ <li><a href="index-video-right.html"><span>Homepage &#8211; Video Right</span></a></li>
+ <li><a href="index-3d-1.html"><span>Homepage &#8211; 3D 1</span></a></li>
+ <li><a href="index-3d-2.html"><span>Homepage &#8211; 3D 2</span></a></li>
+ <li><a href="template-leftnav.html"><span>Left Nav</span></a></li>
+ <li><a href="template-leftnav-sidebar.html"><span>Left Nav + Sidebar</span></a></li>
+ <li><a href="template-leftsidebar.html"><span>Left Sidebar + No Nav</span></a></li>
+ <li><a href="template-leftsidebar-horizontal-nav.html"><span>Left Sidebar + Horizontal Nav</span></a></li>
+ <li><a href="template-rightnav.html"><span>Right Nav</span></a></li>
+ <li><a href="template-rightnav-sidebar.html"><span>Right Nav + Sidebar</span></a></li>
+ <li><a href="template-rightsidebar.html"><span>Right Sidebar + No Nav</span></a></li>
+ <li><a href="template-rightsidebar-horizontal-nav.html"><span>Right Sidebar + Horizontal Nav</span></a></li>
+ <li><a href="template-fullwidth.html"><span>Full Width + No Nav</span></a></li>
+ <li><a href="template-fullwidth-horizontal-nav.html"><span>Full Width + Horizontal Nav</span></a></li>
+ <li><a href="template-contact-iphone.html"><span>Contact Page (iPhone)</span></a></li>
+ <li class="current-menu-item"><a href="template-contact-google-map.html"><span>Contact Page (Google map)</span></a></li>
+ <li><a href="template-sitemap.html"><span>Sitemap</span></a></li>
+ <li><a href="template-404error.html"><span>404 Error Page</span></a></li></ul>
+</li>
+
+<li><a href="_demo-colors/color-autumn.html"><span><strong>Styles</strong><span class="navi-description">color variations</span></span></a>
+<ul class="sub-menu">
+	<li><a href="_demo-colors/color-autumn.html"><span>Autumn</span></a></li>
+	<li><a href="_demo-colors/color-black.html"><span>Black</span></a></li>
+	<li><a href="_demo-colors/color-bluegrey.html"><span>Blue Grey</span></a></li>
+	<li><a href="_demo-colors/color-cherry.html"><span>Cherry</span></a></li>
+	<li><a href="_demo-colors/color-coffee.html"><span>Coffee</span></a></li>
+	<li><a href="_demo-colors/color-coolblue.html"><span>Cool Blue</span></a></li>
+	<li><a href="_demo-colors/color-fire.html"><span>Fire</span></a></li>
+	<li><a href="_demo-colors/color-forestgreen.html"><span>Forest Green</span></a></li>
+	<li><a href="_demo-colors/color-golden.html"><span>Golden</span></a></li>
+	<li><a href="_demo-colors/color-grey.html"><span>Grey</span></a></li>
+	<li><a href="_demo-colors/color-limegreen.html"><span>Lime Green</span></a></li>
+	<li><a href="_demo-colors/color-periwinkle.html"><span>Periwinkle</span></a></li>
+	<li><a href="_demo-colors/color-pink.html"><span>Pink</span></a></li>
+	<li><a href="_demo-colors/color-purple.html"><span>Purple</span></a></li>
+	<li><a href="_demo-colors/color-royalblue.html"><span>Royal Blue</span></a></li>
+	<li><a href="_demo-colors/color-silver.html"><span>Silver</span></a></li>
+	<li><a href="_demo-colors/color-skyblue.html"><span>Sky Blue</span></a></li>
+	<li><a href="_demo-colors/color-teal.html"><span>Teal</span></a></li>
+	<li><a href="_demo-colors/color-tealgrey.html"><span>Teal Grey</span></a></li>
+	<li><a href="_demo-colors/color-violet.html"><span>Violet</span></a></li></ul>
+</li-->
+
+<!--li><a href="#"><span><strong>Text</strong><span class="navi-description">option</span></span></a>
+<ul class="sub-menu">
+<li><a href="/home/text_option"><span>Process Option</span></a></li>
+<li><a href="/home/deliverable_option"><span>Deliverable Option</span></a></li>
+</ul>
+
+</li>
+
+<li><a href="/map"><span><strong>Map</strong><span class="navi-description">option</span></span></a></li--></ul>
+<!-- ***************** - END Main Navigation - ***************** -->
+
+
+
+
+</div><!-- header-area -->
+</div><!-- end rays -->
+</div><!-- end header-holder -->
+</div><!-- end header -->
+ 
+ 
+
+ 
+<div id="main">
+<div class="main-area">
+
+<!-- ***************** - START Title Bar - ***************** -->
+<div class="tools">
+<div class="holder">
+<div class="frame">
+<h1>
+  <% if content_for?(:page_title_bar) %>
+    <%= yield(:page_title_bar) %>
+  <%else%>
+    Home
+  <% end %>
+  </h1>
+
+
+    <%= form_tag("/home/search",:id => "searchform", :class => "search-form" , :method => "post") do %>
+<fieldset>
+<span class="text">
+ <input type="submit" class="submit" value="search" id="searchsubmit" />
+ <input type="text" name="search" id="search" placeholder="Search" />
+</span>
+</fieldset>
+<%end%>
+
+
+<% if content_for?(:page_breadcrumbs) %>
+
+<p class="breadcrumb"><%= yield(:page_breadcrumbs) %></p>
+<%else%>
+  <!--p class="breadcrumb"><a href="index-jquery-1.html">Home</a><a href="index-jquery-2.html">Pages</a><span class='current_crumb'>Contact Us</span></p-->
+<p class="breadcrumb"><%=link_to("Home" , "/map")%></p>
+<% end %>
+</div><!-- end frame -->
+
+</div><!-- end holder -->
+</div><!-- end tools -->
+<!-- ***************** - END Title Bar - ***************** -->
+
+
+
+
+<div class="main-holder">
+  <%= yield%>
+</div><!-- end main-holder -->
+</div><!-- main-area -->
+
+
+
+
+
+
+
+<!-- ***************** - Top Footer - ***************** --> 
+<div id="footer">
+<div class="footer-area">
+<div class="footer-wrapper">
+<div class="footer-holder">
+
+
+<!-- /***************** - Footer Content Starts Here - ***************** --> 
+<div class="one_fourth"><h3>Events</h3><ul class="xoxo blogroll">					<li>
+						<a href="http://www.gartner.com/technology/summits/apac/business-intelligence/" class="post_event">
+						<div class="post_event_date">
+							<span class="month">FEB</span>
+							<span class="day">21</span>
+						</div><!-- end post_date -->
+						</a>
+						<a href="http://www.gartner.com/technology/summits/apac/business-intelligence/">Gartner BI and IM Summi...</a>
+						<br />
+						InfoReady are a proud sponsor of the APAC ...</a>
+					</li><!-- end footer_post -->
+									<li>
+						<a href="http://www-01.ibm.com/software/au/data/2012-conference/index.html" class="post_event">
+						<div class="post_event_date">
+							<span class="month">MAR</span>
+							<span class="day">13</span>
+						</div><!-- end post_date -->
+						</a>
+						<a href="http://www-01.ibm.com/software/au/data/2012-conference/index.html">IBM Business Analytics...</a>
+						<br />
+						InfoReady are a proud sponsor of the 2012 ...</a>
+					</li><!-- end footer_post -->
+									<li>
+						<a href="http://www.dqasiapacific.com/" class="post_event">
+						<div class="post_event_date">
+							<span class="month">MAR</span>
+							<span class="day">27</span>
+						</div><!-- end post_date -->
+						</a>
+						<a href="http://www.dqasiapacific.com/">Data Quality 2012 Asia...</a>
+						<br />
+						InfoReady are a proud congress partner and presenter ...</a>
+					</li><!-- end footer_post -->
+				</ul></div><!-- end first one_fourth_column -->
+
+
+
+<div class="one_fourth">
+  <h3>Useful Links</h3>
+  <ul class='xoxo blogroll'>
+    <li><a href="http://www.comintelli.com" target="_blank">
+      <img src="http://www.infoready.com.au/wp-content/uploads/2011/09/comintelli2.png"  alt="Comintelli Knowledge XChanger™ "  /> Comintelli Knowledge XChanger™</a>
+    </li>
+    <li><a href="http://www.dama.org.au/" target="_blank">
+      <img src="http://www.infoready.com.au/wp-content/uploads/2012/02/DAMA.png"  alt="Data Management Association "  /> Data Management Association</a>
+    </li>
+    <li><a href="http://www.scip.org" target="_blank">
+      <img src="http://www.infoready.com.au/wp-content/uploads/2011/09/scip2.png"  alt="Strategic and Competitive Intelligence Professionals "  /> Strategic and Competitive Intelligence Professionals</a>
+    </li>
+    <li><a href="http://tdwi.org" target="_blank">
+      <img src="http://www.infoready.com.au/wp-content/uploads/2011/09/tdwi2.png"  alt="The Data Warehouse Institute "  /> The Data Warehouse Institute</a>
+    </li>
+	</ul>
+</div><!-- end second one_fourth_column -->
+
+
+
+<div class="one_fourth">
+<h3>Follow Us</h3>
+<ul class="social_icons">
+<li><a href="http://www.infoready.com.au/category/events/feed/atom/" onclick="window.open(this.href);return false;" class="rss">rss</a></li>
+<li><a href="http://twitter.com/#!/InfoReady" class="twitter" onclick="window.open(this.href);return false;">Twitter</a></li>
+<li><a href="http://www.facebook.com/pages/InfoReady/135559026495208" class="facebook" onclick="window.open(this.href);return false;">Facebook</a></li>
+<li><a href="http://www.linkedin.com/company/2446660" class="linkedin" onclick="window.open(this.href);return false;">LinkedIn</a></li>
+</ul>
+</div><!-- end third one_fourth_column -->
+
+
+
+
+<div class="one_fourth_last">
+  <h3>Contact Info</h3>			
+    <div class="textwidget">
+      <div class="contact_info">
+        <ul class="contact_info">
+          <li class="phone">+61 3 8376 8200</li>
+          <li class="address">Level 2, 480 Collins St<br />Melbourne 3000 Vic<br />Australia</li>
+          <li class="email">info@infoready.com.au</li>
+        </ul>
+        <div class="logo"></div>
+      </div>
+    </div>
+</div><!-- end fourth one_fourth_column -->
+
+<!-- ***************** - END Footer Content - ***************** --> 
+
+
+
+
+</div><!-- footer-holder -->
+</div><!-- end footer-wrapper -->
+</div><!-- end footer-area -->
+</div><!-- end footer -->
+
+
+<!-- /***************** - END Top Footer Area - ***************** --> 
+
+
+
+
+
+
+<!-- /***************** - Bottom Footer - ***************** --> 
+
+<div id="footer_bottom">
+ <div class="info">
+ <div id="foot_left"><p>Copyright &copy; 2012 InfoReady. All rights reserved.</p>
+ </div><!-- end foot_left -->
+ 
+ 
+ <div id="foot_right">
+ <div class="top-footer"><a href="#" class="link-top">top</a></div>
+ 
+ <ul>
+ <li><a href="/">Home</a></li>
+ <!--li><a href="template-sitemap.html">Sitemap</a></li>
+ <li><a href="template-contact-iphone.html">Contact</a></li>
+ <li><a href="template-blog.html">Blog</a></li>
+ <li><a href="#">Purchase</a></li-->
+ </ul>
+ </div><!-- end foot_right -->
+ </div><!-- end info -->
+</div><!-- end footer_bottom -->
+
+<!-- /***************** - END Bottom Footer - ***************** --> 
+
+
+
+
+</div><!-- end main -->
+</div><!-- end wrapper -->
+<script type="text/javascript" src="/javascripts/jquery.cycle.all.min.js"></script>
+<script type="text/javascript" src="/javascripts/jquery-1-slider.js"></script>
+<script type="text/javascript" src="/javascripts/testimonial-slider.js"></script>
+</body>
+</html>

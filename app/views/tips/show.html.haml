@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @tip.user_id
+%p
+  %b Content:
+  = @tip.content
+%p
+  %b Activity:
+  = @tip.activity_id
+%p
+  %b Approved:
+  = @tip.approved
+
+= link_to 'Edit', edit_tip_path(@tip)
+\|
+= link_to 'Back', tips_path
