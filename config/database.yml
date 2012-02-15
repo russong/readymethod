@@ -4,13 +4,10 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 development:
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql
   host: localhost
-  database: infoready
-  # pool: 5
-  # socket: /private/var/pgsql_socket
-  username: postgres
+  database: readymethod
+  username: root
   password:
 
 # Warning: The database defined as "test" will be erased and
