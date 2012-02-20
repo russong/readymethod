@@ -27,5 +27,16 @@ Infoready::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = false
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+   # config.action_mailer.default_url_options = { :only => 'localhost:3000' }
   # config.log_level = :warn
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "secure.emailsrvr.com",
+    :port                 => 465,
+    :domain               => 'infoready.com.au',
+    :user_name            => 'kxc.support@infoready.com.au',
+    :password             => 'Inf0r3ady',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
 end
